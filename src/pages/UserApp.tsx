@@ -200,10 +200,10 @@ export default function UserApp() {
         {/* Botão de logout invisível canto superior esquerdo */}
         <button
           onClick={logout}
-          className="absolute top-3 left-4 z-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center gap-1 text-[10px] text-zinc-500 hover:text-red-400 uppercase tracking-widest"
+          className="absolute top-3 left-4 z-50 flex items-center gap-2 text-[11px] text-zinc-400 hover:text-red-400 uppercase tracking-widest transition-colors duration-200 font-bold"
         >
           <LogOut className="h-3 w-3" />
-          sair
+          Sair
         </button>
 
         {/* Top Status Bar */}
