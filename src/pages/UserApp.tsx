@@ -197,6 +197,15 @@ export default function UserApp() {
   if (!selectedGame) {
     return (
       <div className="min-h-screen bg-black text-white font-mono flex flex-col relative overflow-hidden">
+        {/* Botão de logout invisível canto superior esquerdo */}
+        <button
+          onClick={logout}
+          className="absolute top-3 left-4 z-50 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center gap-1 text-[10px] text-zinc-500 hover:text-red-400 uppercase tracking-widest"
+        >
+          <LogOut className="h-3 w-3" />
+          sair
+        </button>
+
         {/* Top Status Bar */}
         <div className="w-full bg-black/80 backdrop-blur-md border-b border-white/5 py-2 px-6 flex justify-center gap-8 text-[10px] font-bold uppercase tracking-widest z-50">
           <div className="flex gap-2">
