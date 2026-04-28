@@ -1,0 +1,6 @@
+{
+  "name": "Admin Pro - Dashboard de Gerenciamento",
+  "description": "Sistema administrativo completo com controle de acesso temporário, autenticação JWT e pronto para Railway.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

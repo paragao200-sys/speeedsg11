@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-neon-blue: #00f2ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-pink: #ff00e6;
+  --color-neon-green: #39ff14;
+  
+  --color-dark-bg: #030303;
+  --color-dark-card: #0a0a0a;
+  --color-dark-border: rgba(255, 255, 255, 0.07);
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-zinc-100 font-sans antialiased selection:bg-neon-blue selection:text-black;
+    background-image: 
+      radial-gradient(circle at 50% -20%, rgba(0, 242, 255, 0.05), transparent 80%),
+      radial-gradient(circle at 0% 100%, rgba(188, 19, 254, 0.03), transparent 50%);
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight font-bold;
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-card/60 backdrop-blur-xl border border-dark-border rounded-3xl overflow-hidden transition-all duration-300;
+  }
+  
+  .glass-card-hover {
+    @apply hover:border-white/20 hover:shadow-[0_0_40px_rgba(255,255,255,0.02)] hover:-translate-y-1;
+  }
+
+  .neon-glow-blue {
+    @apply shadow-[0_0_40px_rgba(0,242,255,0.4)] border-neon-blue/60;
+  }
+
+  .neon-glow-red {
+    @apply shadow-[0_0_40px_rgba(239,68,68,0.4)] border-red-500/60;
+  }
+
+  .neon-glow-purple {
+    @apply shadow-[0_0_20px_rgba(188,19,254,0.2)] border-neon-purple/40;
+  }
+
+  .premium-button {
+    @apply relative inline-flex items-center justify-center px-6 py-3 rounded-2xl font-bold uppercase tracking-tighter transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:pointer-events-none overflow-hidden;
+  }
+
+  .premium-button-blue {
+    @apply bg-neon-blue text-black hover:shadow-[0_0_25px_rgba(0,242,255,0.5)] hover:bg-white;
+  }
+
+  .premium-input {
+    @apply w-full px-6 py-4 bg-white/[0.03] border border-white/5 rounded-2xl outline-none focus:bg-white/[0.05] focus:border-neon-blue/50 focus:ring-4 focus:ring-neon-blue/5 transition-all text-white placeholder:text-zinc-600;
+  }
+
+  .glow-text-blue {
+    @apply text-neon-blue drop-shadow-[0_0_8px_rgba(0,242,255,0.5)];
+  }
+
+  .glow-text-purple {
+    @apply text-neon-purple drop-shadow-[0_0_8px_rgba(188,19,254,0.5)];
+  }
+}
