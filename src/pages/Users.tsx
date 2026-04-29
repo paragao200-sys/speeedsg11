@@ -99,8 +99,9 @@ export default function Users() {
       }
       fetchUsers();
       closeModal();
-    } catch (error) {
-      alert("Erro ao salvar usuário. Verifique os dados.");
+    } catch (error: any) {
+      const msg = error?.response?.data?.error || error?.response?.data?.errors?.[0]?.message || "Verifique os dados.";
+      alert("Erro: " + msg);
     }
   };
 
